@@ -16,12 +16,13 @@ public class ArtController {
     public ArtController(ArtService artService) {
         this.artService = artService;
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<String> getArtById(@PathVariable int id) {
-        String description = artService.getArtById(id).getDescription();
-        if (description != null) {
-            return new ResponseEntity<>(description, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    @GetMapping()
+    public ResponseEntity<String> getArtById() {
+//        String description = artService.getArtById(id).getDescription();
+//        if (description != null) {
+//            return new ResponseEntity<>(description, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Hello World", HttpStatus.OK);
     }
 }
