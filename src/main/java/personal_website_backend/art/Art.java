@@ -12,7 +12,6 @@ public class Art {
     private int art_id;
     private String name;
     private String description;
-    private String image;
     private String type;
 
     public int getArt_id() {
@@ -39,13 +38,6 @@ public class Art {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getType() {
         return type;
