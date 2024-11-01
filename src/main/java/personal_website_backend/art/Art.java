@@ -40,7 +40,7 @@ public class Art {
 
 
     public String getArt_type() {
-        return art_type;
+        return this.art_type;
     }
 
     public void setArt_type(String type) {

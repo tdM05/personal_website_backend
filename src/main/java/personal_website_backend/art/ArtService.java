@@ -34,7 +34,6 @@ public class ArtService {
         blobClient.download(outputStream);
         return outputStream.toByteArray();
     }
-
     public List<Integer> getIds() {
         List<Art> allArt = artRepository.findAll();
         List<Integer> res = new ArrayList<>();

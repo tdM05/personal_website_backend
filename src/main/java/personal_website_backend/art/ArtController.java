@@ -35,8 +35,25 @@ public class ArtController {
                 .contentType(MediaType.IMAGE_PNG)
                 .body(imageBytes);
     }
+    @GetMapping("/name/{id}")
+    public ResponseEntity<String> getNameById(@PathVariable int id) {
+        String name = artService.getArtById(id).getName();
+        if (name != null) {
+            return new ResponseEntity<>(name, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    @GetMapping("/type/{id}")
+    public ResponseEntity<String> getTypeById(@PathVariable int id) {
+        String type = artService.getArtById(id).getArt_type();
+        if (type != null) {
+            return new ResponseEntity<>(type, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
     @GetMapping(path="/ids", produces = "application/json")
     public ResponseEntity<List<Integer>> getArtIds() {
         return new ResponseEntity<>(artService.getIds(), HttpStatus.OK);
     }
+
 }
