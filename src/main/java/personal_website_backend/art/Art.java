@@ -1,6 +1,5 @@
 package personal_website_backend.art;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,7 +11,8 @@ public class Art {
     private int art_id;
     private String name;
     private String description;
-    private String type;
+    private String art_type;
+    private String azure_image_name;
 
     public int getArt_id() {
         return art_id;
@@ -39,11 +39,18 @@ public class Art {
     }
 
 
-    public String getType() {
-        return type;
+    public String getArt_type() {
+        return art_type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setArt_type(String type) {
+        this.art_type = type;
+    }
+    public String getAzure_image_name() {
+        return azure_image_name;
+    }
+
+    public void setAzure_image_name(String azure_image_name) {
+        this.azure_image_name = azure_image_name;
     }
 }
