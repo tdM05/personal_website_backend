@@ -35,7 +35,7 @@ public class ArtController {
                 .contentType(MediaType.IMAGE_PNG)
                 .body(imageBytes);
     }
-    @GetMapping("/ids")
+    @GetMapping(path="/ids", produces = "application/json")
     public ResponseEntity<List<Integer>> getArtIds() {
         return new ResponseEntity<>(artService.getIds(), HttpStatus.OK);
     }
