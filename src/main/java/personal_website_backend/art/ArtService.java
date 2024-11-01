@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ArtService {
@@ -31,5 +33,14 @@ public class ArtService {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         blobClient.download(outputStream);
         return outputStream.toByteArray();
+    }
+
+    public List<Integer> getIds() {
+        List<Art> allArt = artRepository.findAll();
+        List<Integer> res = new ArrayList<>();
+        for(Art art : allArt) {
+            res.add(art.getArt_id());
+        }
+        return res;
     }
 }

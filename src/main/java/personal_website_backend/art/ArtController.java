@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/api/art") //http://localhost:8080/api/art
 public class ArtController {
@@ -32,5 +34,9 @@ public class ArtController {
         return ResponseEntity.ok()
                 .contentType(MediaType.IMAGE_PNG)
                 .body(imageBytes);
+    }
+    @GetMapping("/ids")
+    public ResponseEntity<List<Integer>> getArtIds() {
+        return new ResponseEntity<>(artService.getIds(), HttpStatus.OK);
     }
 }
